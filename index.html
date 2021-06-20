@@ -1,139 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Font Awesome  -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
-      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
-      crossorigin="anonymous"
-    />
+    <!-- Normalize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- Icons  -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,900&family=Satisfy&display=swap" rel="stylesheet">
     <!-- css  -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
     <!-- script -->
     <script defer src="script.js"></script>
-    <title>Portfolio</title>
-  </head>
-  <body>
-    <!-- header with navbar -->
-    <header>
-      <nav class="nav">
-        <div class="nav__logo">
-          <a href="#">Nata</a>
-        </div>
-        <ul class="nav__list">
-          <li class="nav__items">
-            <a href="#about" class="nav__link">About me</a>
-          </li>
-          <li class="nav__items">
-            <a href="#projects" class="nav__link">Projects</a>
-          </li>
-          <li class="nav__items">
-            <a href="#skills" class="nav__link">Skills</a>
-          </li>
-          <li class="nav__items">
-            <a href="#contact" class="nav__link">Contact</a>
-          </li>
-        </ul>
-      </nav>
+    <title>Natalia's Portfolio Website</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Nata</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link"><i class="uil uil-home nav__icon"></i> Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link"><i class="uil uil-user-square nav__icon"></i> About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link"><i class="uil uil-file-info-alt nav__icon"></i> Skills</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link"><i class="uil uil-book nav__icon" ></i> Education</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#portfolio" class="nav__link"><i class="uil uil-books nav__icon"></i> Portfolio</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link"><i class="uil uil-envelopes nav__icon"></i> Contact me</a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+            <div class="nav__btns">
+                <div class="nav__toggle nav__toggle--show" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
     </header>
     <!-- main -->
-    <main>
-      <!-- section about -->
-      <section id="about">
-        <div class="container">
-          <div class="row">
-            <div class="col col-8">
-              <h1>About me</h1>
-              <p>
-                Hi! My name is Natalia Ermurachi and I live in the Netherland. I
-                am a beginner front-end developer and I am very happy that I
-                began exploring this amazing world of development.
-              </p>
-              <p>
-                I studied biology in my university but thanks to my husband I
-                changed my area and I started programing learning from 0. At
-                this moment I made a big progress I am motivated to keep
-                learning and developing myself and gaining new skills
-              </p>
-              <p>
-                In my free time I like to read psychological/motivational books.
-                After programing my second passion is exploring human behavior
-                and personalities
-              </p>
-              <p>
-                Nice fact about me! I speak 4 languages (Rumanian, Russian,
-                English, Netherlands)
-              </p>
+    <main class="main">
+        <!-- home -->
+        <section class="home section" id="home">
+            <div class="home__container container grid">
+                <div class="home__content grid">
+                    <div class="home__social">
+                        <a href="https://www.linkedin.com/in/natalia-ermurachi-18a35b202" target="_blank" class="home__social-icon">
+                            <i class="uil uil-linkedin"></i>
+                        </a>
+                        <a href="https://www.facebook.com/natalia.rotaru.3" target="_blank" class="home__social-icon">
+                            <i class="uil uil-facebook"></i>
+                        </a>
+                        <a href="https://github.com/nataliaermurachi" target="_blank" class="home__social-icon">
+                            <i class="uil uil-github"></i>
+                        </a>
+                    </div>
+                    <div class="home__img">
+                        <!-- <img class="home__profile-img" src="/assets/img/profile-pic.svg"> -->
+                    </div>
+                    <div class="home__data">
+                        <h1 class="home__title">Welcome on my page</h1>
+                        <h3 class="home__subtitle">I'am Natalia, junior developer</h3>
+                        <p class="home__description">Energetic, dedicated, enthusiastic, highly motivated person in the beginning of the career who likes to take initiative and seek out new challenges.</p>
+                        <a href="#contact" class="button button--flex">
+                        Contact Me <i class="uil uil-message button__icon"></i>
+                      </a>
+                    </div>
+                </div>
+                <div class="home__scroll">
+                    <a href="#about" class="home__scroll-button button--flex">
+                        <i class="uil uil-mouse-alt-2 home__scroll-mouse"></i>
+                        <span class="home__scroll-name">Scroll down</span>
+                        <i class="uil uil-arrow-down home__scroll-arrow"></i>
+                    </a>
+                </div>
             </div>
-            <div class="col col-4">
-              <figure>
-                <img src="#" alt="Picture of me" />
-                <figcaption>
-                  My photo when I wrote first line of code
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- section projects -->
-      <section id="projects">
-        <h2 class="projects__title">Projects</h2>
-        <details class="project">
-          <summary class="project-title">
-            <h3>The first company page</h3>
-          </summary>
-          <img src="#" alt="First project" class="project-image" />
-          <p class="project-description">
-            First project made for a Service Restore Company.Build with HTML,
-            CSS, Materialize
-          </p>
-        </details>
-        <details class="project">
-          <summary class="project-title">
-            <h3>The first company page</h3>
-          </summary>
-          <img src="#" alt="First project" class="project-image" />
-          <p class="project-description">More info about the details.</p>
-        </details>
-        <details class="project">
-          <summary class="project-title">
-            <h3>The first company page</h3>
-          </summary>
-          <img src="#" alt="First project" class="project-image" />
-          <p class="project-description">More info about the details.</p>
-        </details>
-      </section>
-      <!-- skill section -->
-      <section id="skills">
-        <h2 class="skills-title">Skills</h2>
-        <ul class="skills__container">
-          <li><i class="fab fa-html5"></i></li>
-          <li><i class="fab fa-css3-alt"></i></li>
-          <li><i class="fab fa-js"></i></li>
-          <li><i class="fab fa-git"></i></li>
-          <li><i class="fab fa-npm"></i></li>
-          <li><i class="fab fa-bootstrap"></i></li>
-          <li><i class="fab fa-sass"></i></li>
-          <li><i class="fab fa-react"></i></li>
-        </ul>
-      </section>
+        </section>
+
     </main>
+    <script src="/assets/js/main.js"></script>
     <!-- footer -->
-    <footer id="contact">
-      <div class="contact">
-        <p><span>email: </span>natalia.rotaru.f@gmail.com</p>
-        <p><span>mobile: </span> +31615883034</p>
-      </div>
-      <div class="social">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-      </div>
-    </footer>
-  </body>
+    <!-- scripts -->
+</body>
+
 </html>
