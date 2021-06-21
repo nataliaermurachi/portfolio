@@ -8,7 +8,7 @@
     --grey-color-dark: #333333;
     --grey-color-light: #aaa;
     --container-color: #FFFFFF;
-    --body-color: rgba(233, 231, 231, 0.849);
+    --body-color: rgba(241, 238, 238, 0.849);
     /* font, typografy */
     --body-font: 'Source Sans Pro', sans-serif;
     --hand-font: 'Courgette', cursive;
@@ -80,7 +80,7 @@ h1,
 h2,
 h3,
 h4 {
-    color: var(--title-color);
+    color: var(--text-color);
     font-weight: var(--font-semi-bold);
 }
 
@@ -107,11 +107,13 @@ img {
 
 .section__title {
     font-style: var(--h1-font-size);
+    text-shadow: 1px 2px 2px var(--grey-color-dark);
 }
 
 .section__subtitle {
     color: var(--grey-color-dark);
     display: block;
+    text-shadow: 1px 2px 2px var(--grey-color-light);
     font-size: var(--normal-font-size);
     margin-bottom: var(--mb-3);
 }
@@ -293,10 +295,6 @@ img {
     margin-bottom: var(--mb-2);
 }
 
-.home__scroll {
-    /* display: none */
-}
-
 .home__scroll-button {
     color: var(--orange-color);
     transition: .3s;
@@ -402,6 +400,13 @@ img {
 
 
 /* qualification */
+
+.qualification {
+    background-image: url(/assets/img/bg-1.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
 
 .qualification__tabs {
     display: flex;
@@ -535,6 +540,13 @@ img {
 
 /* contact section */
 
+.contact {
+    background-image: url(/assets/img/bg-2.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
 .contact__container {
     row-gap: 3rem;
 }
@@ -580,6 +592,7 @@ img {
     border: none;
     outline: none;
     padding: .25rem .5rem .5rem 0;
+    border-top: 1px solid var(--orange-color);
 }
 
 

@@ -3,7 +3,9 @@ const navMenu = document.getElementById('nav-menu'),
     navClose = document.getElementById('nav-close'),
     navLink = document.querySelectorAll('.nav__link'),
     tabs = document.querySelectorAll('[data-target]'),
-    tabContents = document.querySelectorAll('[data-content]')
+    tabContents = document.querySelectorAll('[data-content]'),
+    sendMessageBtn = document.getElementById('send-message'),
+    contactInputs = document.querySelectorAll('.contact__input');
 
 function removeMenu() {
     navMenu.classList.remove('show-menu');
@@ -60,3 +62,9 @@ let swiper = new Swiper(".swiper-container", {
         clickable: true,
     },
 });
+
+// clear inputs
+sendMessageBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    contactInputs.forEach(inp => inp.value = "");
+})
