@@ -1,0 +1,29 @@
+{
+    "name": "Portfolio",
+    "version": "1.0.0",
+    "description": "",
+    "main": "script.js",
+    "scripts": {
+        "dev": "nodemon server.js",
+        "start": "node server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nataliaermurachi/portfolio.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/nataliaermurachi/portfolio/issues"
+    },
+    "homepage": "https://github.com/nataliaermurachi/portfolio#readme",
+    "dependencies": {
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "nodemailer": "^6.6.2"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.7"
+    }
+}
