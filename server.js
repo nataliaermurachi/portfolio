@@ -14,7 +14,8 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
+    console.log(process.env)
 
     const transporter = nodemailer.createTransport({
         service: 'gmail',
