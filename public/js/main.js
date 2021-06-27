@@ -68,6 +68,7 @@ let swiper = new Swiper(".swiper-container", {
 });
 
 // form functionality
+// form functionality
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
