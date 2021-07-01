@@ -20,7 +20,7 @@ app.get('/sent', (req, res) => {
 app.post('/sendemail', (req, res) => {
     const { fName, email, message } = req.body;
     const from = process.env.EMAIL; // sender from the sendgrid account
-    const to = 'ermurachinatalia5@gmail.com';
+    const to = process.env.EMAIL;
     const subject = "New contact request";
     const output = `
       <p>You have a new Contact Request</p>
