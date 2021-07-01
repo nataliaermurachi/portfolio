@@ -16,9 +16,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Source+Sans+Pro:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
     <!-- swiper css -->
-    <link rel="stylesheet" href="/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../public/css/swiper-bundle.min.css">
     <!-- css  -->
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="../public/css/style.css" />
     <title>Natalia's Portfolio Website</title>
 </head>
 
@@ -99,16 +99,16 @@
             <h2 class="section__title">About Me</h2>
             <span class="section__subtitle">Details about myself</span>
             <div class="about__container container grid">
-                <img src="/img/me.jpg" alt="my picture" class="about__img">
+                <img src="../public/img/me.jpg" alt="my picture" class="about__img">
                 <div class="about__data">
                     <p class="about__description">
                         I am a developer, with interest in front-end and also in back-end. I keep studying and practicing every day. I believe that you never stop learning, especially in developement area.
                     </p>
                     <div class="about__buttons">
-                        <a download="" href="/pdf/Natalia.Ermurachi.CV.pdf" class="button button--flex">
+                        <a download="" href="../public/pdf/Natalia.Ermurachi.CV.pdf" class="button button--flex">
                             <i class="fa fa-download button__icon"></i> CV | EN
                         </a>
-                        <a download="" href="/pdf/Natalia.Ermurachi.CV.NL.pdf" class="button button--flex">
+                        <a download="" href="../public/pdf/Natalia.Ermurachi.CV.NL.pdf" class="button button--flex">
                             <i class="fa fa-download button__icon"></i> CV | NL
                         </a>
                     </div>
@@ -253,7 +253,7 @@
                 <div class="swiper-wrapper">
                     <!-- project 1 -->
                     <div class="portfolio__content grid swiper-slide">
-                        <img src="/img/proj1.jpg" alt="project 1" class="portfolio__img">
+                        <img src="../public/img/proj1.jpg" alt="project 1" class="portfolio__img">
 
                         <div class="portfolio__data">
                             <h3 class="portfolio__title">Simple website</h3>
@@ -265,7 +265,7 @@
                     </div>
                     <!-- project 2 -->
                     <div class="portfolio__content grid swiper-slide">
-                        <img src="/img/proj2.jpg" alt="project 1" class="portfolio__img">
+                        <img src="../public/img/proj2.jpg" alt="project 1" class="portfolio__img">
 
                         <div class="portfolio__data">
                             <h3 class="portfolio__title">React burger-builder app</h3>
@@ -277,7 +277,7 @@
                     </div>
                     <!-- project 3 -->
                     <div class="portfolio__content grid swiper-slide">
-                        <img src="/img/proj3.jpg" alt="project 1" class="portfolio__img">
+                        <img src="../public/img/proj3.jpg" alt="project 1" class="portfolio__img">
 
                         <div class="portfolio__data">
                             <h3 class="portfolio__title">Node App</h3>
@@ -289,7 +289,7 @@
                     </div>
                     <!-- project 4 -->
                     <div class="portfolio__content grid swiper-slide">
-                        <img src="/img/proj4.jpg" alt="project 1" class="portfolio__img">
+                        <img src="../public/img/proj4.jpg" alt="project 1" class="portfolio__img">
 
                         <div class="portfolio__data">
                             <h3 class="portfolio__title">Blog template</h3>
@@ -340,24 +340,20 @@
                         </div>
                     </div>
                 </div>
-                <form action="/" method="POST" class="contact__form grid">
+                <form method="POST" action="/sendemail" class="contact__form grid">
                     <div class="contact__inputs grid">
                         <div class="contact__content">
                             <label for="fName" class="contact__label">Name</label>
-                            <input type="text" id="fName" class="contact__input">
+                            <input type="text" name="fName" id="fName" class="contact__input" required>
                         </div>
                         <div class="contact__content">
                             <label for="email" class="contact__label">Email</label>
-                            <input type="email" id="email" class="contact__input">
+                            <input type="email" id="email" name="email" class="contact__input" required>
                         </div>
                     </div>
                     <div class="contact__content">
-                        <label for="subject" class="contact__label">Subject</label>
-                        <input type="text" id="subject" class="contact__input">
-                    </div>
-                    <div class="contact__content">
                         <label for="message" class="contact__label">Message</label>
-                        <textarea name="" id="message" cols="0" rows="7" class="contact__input"></textarea>
+                        <textarea name="message" id="message" cols="0" rows="7" class="contact__input" required></textarea>
                     </div>
                     <div>
                         <button type="submit" class="button button--flex submit" id="send-message"> Send Message
@@ -395,9 +391,9 @@
         </div>
     </footer>
     <!-- swiper.js -->
-    <script src="/js/swiper-bundle.min.js"></script>
+    <script src="../public/js/swiper-bundle.min.js"></script>
     <!-- main.js -->
-    <script src="/js/main.js"></script>
+    <script src="../public/js/main.js"></script>
 
 </body>
 

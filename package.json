@@ -19,9 +19,10 @@
     },
     "homepage": "https://github.com/nataliaermurachi/portfolio/",
     "dependencies": {
+        "@sendgrid/mail": "^7.4.5",
         "dotenv": "^10.0.0",
+        "ejs": "^3.1.6",
         "express": "^4.17.1",
-        "nodemailer": "^6.6.2",
         "path": "^0.12.7"
     },
     "devDependencies": {

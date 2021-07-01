@@ -3,13 +3,8 @@ const navMenu = document.getElementById('nav-menu'),
     navClose = document.getElementById('nav-close'),
     navLink = document.querySelectorAll('.nav__link'),
     tabs = document.querySelectorAll('[data-target]'),
-    tabContents = document.querySelectorAll('[data-content]'),
-    contactForm = document.querySelector('.contact__form');
+    tabContents = document.querySelectorAll('[data-content]');
 
-let fName = document.getElementById('fName'),
-    email = document.getElementById('email'),
-    subject = document.getElementById('subject'),
-    message = document.getElementById('message');
 
 function removeMenu() {
     navMenu.classList.remove('show-menu');
@@ -66,33 +61,3 @@ let swiper = new Swiper(".swiper-container", {
         clickable: true,
     },
 });
-
-// form functionality
-// form functionality
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    let formData = {
-        fName: fName.value,
-        email: email.value,
-        subject: subject.value,
-        message: message.value
-    }
-
-    let xhr = new XMLHttpRequest();
-    xhr.open('POST', '/');
-    xhr.setRequestHeader('content-type', 'application/json');
-    xhr.onload = function() {
-        console.log(xhr.responseText);
-        if (xhr.responseText == 'success') {
-            alert('Message sent');
-            fName.value = "";
-            email.value = "";
-            subject.value = "";
-            message.value = "";
-        } else {
-            alert('Something went wrong!')
-        }
-    }
-    xhr.send(JSON.stringify(formData))
-})

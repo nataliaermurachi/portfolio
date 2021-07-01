@@ -1,64 +1,39 @@
+const path = require('path')
+
 const express = require('express');
-const path = require('path');
-const nodemailer = require('nodemailer');
-require('dotenv').config();
-
 const app = express();
-const PORT = process.env.PORT || 80;
 
-app.use(express.static('public'))
-app.use(express.json())
+const sendEmail = require('./utils/sendemail');
 
+app.use(express.urlencoded({ extended: false }));
+app.use('/public', express.static(path.join(__dirname, 'public')));
+app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html')
-})
-
-app.post('/', (req, res) => {
-    const output = `
-      <p>You have a new contact request</p>
-      <h3>Contact Details</h3>
-      <ul>  
-        <li>Name: ${req.body.fName}</li>
-        <li>Email: ${req.body.email}</li>
-        <li>Subject: ${req.body.subject}</li>
-      </ul>
-      <h3>Message</h3>
-      <p>${req.body.message}</p>
-    `;
-    // create reusable transporter object using the default SMTP transport
-    let transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: process.env.EMAIL,
-            pass: process.env.PASSWORD
-        },
-        tls: {
-            rejectUnauthorized: false
-        }
-    });
-
-    // setup email data with unicode symbols
-    const mailOptions = {
-        from: req.body.email,
-        to: process.env.EMAIL,
-        subject: `Message from ${req.body.email}: ${req.body.subject}`,
-        text: req.body.message,
-        html: output
-    }
-
-    // send mail with defined transport object
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.log(error);
-            res.send('error')
-        } else {
-            console.log('Email sent: ' + info.response);
-            res.send('success')
-        }
-    });
+    res.render('main')
 });
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+app.get('/sent', (req, res) => {
+    res.render('sent')
+});
+
+app.post('/sendemail', (req, res) => {
+    const { fName, email, message } = req.body;
+    const from = process.env.EMAIL; // sender from the sendgrid account
+    const to = 'ermurachinatalia5@gmail.com';
+    const subject = "New contact request";
+    const output = `
+      <p>You have a new Contact Request</p>
+      <h3>Contact Details</h3>
+      <ul>
+        <li>Name: ${fName}</li>
+        <li>Email: ${email}</li>
+        <li>Message: ${message}</li>
+      </ul>
+  `;
+    sendEmail(to, from, subject, output);
+    res.redirect('/sent')
 })
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running op port: ${PORT}`));
