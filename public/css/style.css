@@ -10,8 +10,8 @@
     --container-color: #FFFFFF;
     --body-color: rgba(241, 238, 238, 0.849);
     /* font, typografy */
-    --body-font: 'Source Sans Pro', sans-serif;
-    --hand-font: 'Courgette', cursive;
+    --body-font: 'Roboto Slab', serif;
+    --hand-font: 'EB Garamond', serif;
     /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px */
     --big-font-size: 2rem;
     --h1-font-size: 1.5rem;
